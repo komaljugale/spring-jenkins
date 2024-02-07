@@ -22,6 +22,7 @@ public class SpringJenkinsApplication {
 	
     @GetMapping("/app")
 	public String display() {
+    	logger.info("********inside display() method ***************************");
 		return "this is my first jenkin deployment";
 	}
 	
