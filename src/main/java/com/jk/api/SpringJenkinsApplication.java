@@ -12,20 +12,21 @@ import jakarta.annotation.PostConstruct;
 @SpringBootApplication
 @RestController
 public class SpringJenkinsApplication {
-	
+
 	public static Logger logger = LoggerFactory.getLogger(SpringJenkinsApplication.class);
-	
+
 	@PostConstruct
 	public void init() {
 		logger.info("Application started.. ");
+		logger.info("******** second logger statement ***************************");
 	}
-	
-    @GetMapping("/app")
+
+	@GetMapping("/app")
 	public String display() {
-    	logger.info("********inside display() method ***************************");
+
 		return "this is my first jenkin deployment";
 	}
-	
+
 	public static void main(String[] args) {
 		logger.info("Application executed ..");
 		SpringApplication.run(SpringJenkinsApplication.class, args);
